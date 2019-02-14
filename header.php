@@ -19,11 +19,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <?php
-         $pages = get_pages(); ?>
-        <?php foreach ($pages as $page): ?>
 
-        <li class="nav-item">
+        <?php foreach (get_pages(['sort_column' => 'menu_order']) as $page): ?>
+        <li class="nav-item <?php if (is_page($page) || is_home() && $page->ID == get_option('page_for_posts')) { echo 'active'; } ?>">
           <a class="nav-link" href="<?php echo get_permalink($page); ?>">
              <?php echo $page->post_title; ?>
           </a>

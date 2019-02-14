@@ -11,6 +11,8 @@
 
         <?php the_content(); ?>
 
+        <?php the_date(); ?>
+
       <?php endwhile; ?>
 
     <?php endif; ?>
